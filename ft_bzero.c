@@ -1,14 +1,25 @@
-void    ft_bzero (void *s, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/19 16:03:08 by afloris           #+#    #+#             */
+/*   Updated: 2024/12/19 16:21:09 by afloris          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_bzero(void *s, size_t n)
 {
-    size_t i; 
-    unsigned char *l;
+	size_t	i;
+	unsigned char	*l;
 
-    l = (unsigned char *)s;
-    i = 0;
-
-    while (i < n)
-    {
-        *(l + i) = 0;
-        i ++;
-    }
+	l = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		*(l + i) = 0;
+		i++;
+	}
 }
