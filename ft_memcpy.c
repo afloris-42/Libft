@@ -3,26 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:24:10 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/19 16:29:05 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/20 21:38:36 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	unsigned char	*tmp_dst;
-	unsigned char	*tmp_src;
+	size_t	i; 
+	char *char_dst; 
+	char *char_src;
 
-	if (dst == NULL && src == NULL)
+	i = 0; 
+	*char_dst = (char *)dst; 
+	*char_src = (char *)src; 
+	if (dst == NULL)
 		return (NULL);
-	tmp_dst = (unsigned char *)dst;
-	tmp_src = (unsigned char *)src;
-	while (n > 0)
+	
+	while (i < n)
 	{
-		*(tmp_dst++) = *(tmp_src++);
-		n--;
+		char dst[i] = char src[i];
+		i++;
 	}
 	return (dst);
 }

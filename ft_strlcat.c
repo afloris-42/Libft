@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:33:00 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/20 12:30:02 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/20 20:06:50 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,19 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	dstsize = sizeof (dst);
 	srcsize = sizeof (src);
 
-	if (dstsize < i)
+	while (dstsize < i)
 
-	/*if (!src || !*src)
-	{
-
-	}*/
 	lenght = dstsize + srcsize;
 	return (lenght);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	str1[50] = "Hello, ";
-	char	str2[] = "world!";
+	char	*str2 = "world!";
+	size_t result = ft_strlcat (str1, str2, sizeof(str1));
 
-	printf ("Dst to src is: %zu\n", ft_strlcat(str1, str2, 40));
+	printf ("Dst to src is: %s\n", str1);
+	printf ("Resulting string is: %zu\n", result);
 	return (0);
-}
+}*/
