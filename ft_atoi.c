@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:39:39 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/21 16:18:50 by afloris          ###   ########.fr       */
+/*   Created: 2024/12/21 16:08:55 by afloris           #+#    #+#             */
+/*   Updated: 2024/12/21 16:13:03 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_atoi(const char *str)
 {
-	char		*tmp_dst;
-	const char	*tmp_src;
-	size_t		i;
+	int	n;
+	int	s;
 
-	if (!dst || !src)
-		return (NULL);
-	tmp_dst = (char *)dst;
-	tmp_src = (const char *)src;
-	i = 0;
-	if (tmp_dst > tmp_src)
+	n = 0;
+	s = 1;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		while (len-- > 0)
-			tmp_dst[len] = tmp_src[len];
+		if (*str == '-')
+			s *= -1;
+		str++;
 	}
-	else
+	while (*sr >= '0' && *str <= '9')
 	{
-		while (i++ < len)
-			tmp_dst[i] = tmp_src[i];
+		n = (n * 10) + (*str - '0');
+		str++;
 	}
-	return (dst);
+	return (n * s);
 }

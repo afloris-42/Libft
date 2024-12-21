@@ -6,20 +6,20 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:03:08 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/20 21:39:17 by babyf            ###   ########.fr       */
+/*   Updated: 2024/12/21 16:18:05 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
 	unsigned char	*l;
+	size_t			i;
 
 	l = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
-		*(l + i) = 0; //unclear
+		*(l + i) = 0;
 		i++;
 	}
 }

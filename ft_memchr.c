@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:39:39 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/21 16:18:50 by afloris          ###   ########.fr       */
+/*   Created: 2024/12/21 14:14:03 by afloris           #+#    #+#             */
+/*   Updated: 2024/12/21 15:20:41 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char		*tmp_dst;
-	const char	*tmp_src;
-	size_t		i;
+	unsigned char	*str;
 
-	if (!dst || !src)
-		return (NULL);
-	tmp_dst = (char *)dst;
-	tmp_src = (const char *)src;
-	i = 0;
-	if (tmp_dst > tmp_src)
+	str = (unsigned char *)s;
+	while (n-- > 0)
 	{
-		while (len-- > 0)
-			tmp_dst[len] = tmp_src[len];
+		if (*str == (unsigned char) c)
+			return ((void *) str);
+		str++;
 	}
-	else
-	{
-		while (i++ < len)
-			tmp_dst[i] = tmp_src[i];
-	}
-	return (dst);
+	return (NULL);
 }
