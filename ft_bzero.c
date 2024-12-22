@@ -6,20 +6,19 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:03:08 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/21 16:18:05 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/22 12:05:08 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*l;
-	size_t			i;
 
 	l = (unsigned char *)s;
-	i = 0;
-	while (i < n)
+	while (n--)
 	{
-		*(l + i) = 0;
-		i++;
+		*l++ = 0;
 	}
 }
