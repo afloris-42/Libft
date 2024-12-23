@@ -6,12 +6,25 @@
 /*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:52:08 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/23 13:54:16 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/23 14:24:28 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	count_digit(char *s, int n)
+{
+
+
 char	*ft_itoa(int n)
 {
+	char	*s;
+	int		i;
+	int		sign;
+
+	i = 0;
+	sign = 1;
+
+	if ((sign = n) < 0)
+		n = -n;
 
