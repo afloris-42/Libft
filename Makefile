@@ -8,23 +8,25 @@ ft_isalpha.c  ft_memcpy.c   ft_split.c       ft_strmapi.c   ft_toupper.c\
 ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strncmp.c   libft.h\
 ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strnstr.c\
 
+SRCS_BONUS = 
+
 OBJS = $(SRC: .c=.o)
 
-BONUS =
-
-BONUS_OBJS = $(BONUS: .c=.o)
+BONUS_OBJS = $(SRCS_BONUS: .c=.o)
 
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
 RM = rm -rf
 AR = ar crs
 
-all: 
+all: $(NAME)
 
 clean:
+		$(RM) $(OBJS) $(OBJS_B)
 
-fclean:
+fclean: clean
+		$(RM) $(NAME)
+re: fclean all
 
-re:
-
-bonus:
+bonus: $(OBJS_B)
+		ar rcs $(NAME) $(OBJS_B)
