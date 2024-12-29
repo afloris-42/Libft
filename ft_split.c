@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:54:25 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/28 17:57:03 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/29 16:46:13 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.>
+#include <unistd.h>
 #include <stdlib.h>
 
 static size_t	count_words (const char *s, char c)
@@ -30,7 +30,7 @@ static size_t	count_words (const char *s, char c)
 		while (*s != c && *s)
 			s++;
 	}
-	return (count)
+	return (count);
 }
 
 char	skip_char(char *s, char c)
@@ -40,14 +40,51 @@ char	skip_char(char *s, char c)
 	return (s);
 }
 
+void	my_free(char **str, size_t i)
+{
+	while (i > 0)
+	{
+		free (str[--i]);
+	}
+	free (str);
+}
+
+char	ft_cpy(char **str, size_t k, size_t j)
+{
+
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	size_t	word_count;
-	size_t 			i;
+	char	*start; 
+	char	**str;
+	size_t	word_count; 
+	size_t	i;
+	size_t	j;
 
-	if (!s)
+	word_count = count_words(s, c);
+	i = 0;
+	str = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (!str)
 		return (NULL);
-
-	word_count = count_word(s, c);
-	result = (char **)malooc((word_count + 1) * sizeof(char *));
+	while (word_count-- > 0)
+	{
+		s = skip_char((char *)s, c);
+		start = (char *)s;
+		while (*s != c && *s)
+			s++;
+		str[i] = (char *)malloc((s - start + 1) * sizeof (char));
+		if (!str[i])
+		{
+			my_free(str, i);s
+			return (NULL);
+		}
+		j = 0;
+		while (start < s)
+			str[i][j++] = *start++; 
+		str[i++][j] = '\0';
+		i++;
+	}
+	str[i] = NULL;
+	return (str);
+}

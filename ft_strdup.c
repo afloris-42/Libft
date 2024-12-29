@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:14:57 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/23 12:20:11 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/25 11:52:51 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*strdup(const char *s1)
 	int		j;
 
 	i = 0;
-	while (s1 != '\0')
+	while (s1[i] != '\0')
 	{
 		i++;
 	}
@@ -32,6 +32,6 @@ char	*strdup(const char *s1)
 		dup[j] = s1[j];
 		j++;
 	}
-	dup != '\0';
+	dup[i] = '\0';
 	return (dup);
 }
