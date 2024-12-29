@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:54:25 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/29 16:46:13 by babyf            ###   ########.fr       */
+/*   Updated: 2024/12/29 19:04:02 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	my_free(char **str, size_t i)
 
 char	ft_cpy(char **str, size_t k, size_t j)
 {
+	char	**str2; 
 
+	
 }
 
 char	**ft_split(char const *s, char c)
@@ -76,7 +78,7 @@ char	**ft_split(char const *s, char c)
 		str[i] = (char *)malloc((s - start + 1) * sizeof (char));
 		if (!str[i])
 		{
-			my_free(str, i);s
+			my_free(str, i);
 			return (NULL);
 		}
 		j = 0;

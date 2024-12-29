@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:52:08 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/23 16:40:04 by afloris          ###   ########.fr       */
+/*   Updated: 2024/12/29 19:13:39 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,31 @@ char	*ft_itoa(int n)
 	int	nb_digit;
 	char	*s;
 
+	if (n == INT_MIN)
+		return ("-2147483648");
+
 	nb_digit = count_digit (n);
 	s = (char *)malloc((nb_digit + 1) * sizeof(char));
-
+	if (!s)
+		return (NULL);
 	if (n < 0)
 	{
 		s[0] = '-';
 		n = -n;
 	}
-	if (!s)
-		return (NULL);
+	
 	s[nb_digit] = '\0';
-	while (n > 0)
+	if (n == 0)
 	{
-		s[--nb_digit] = (n % 10) + '0';
-		n /= 10;
+		s[0] = '0';
+	}
+	else 
+	{
+		while (n > 0)
+		{
+			s[--nb_digit] = (n % 10) + '0';
+			n /= 10;
+		}
 	}
 	return (s);
 }
