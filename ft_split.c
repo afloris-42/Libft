@@ -6,20 +6,21 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:54:25 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/29 19:04:02 by babyf            ###   ########.fr       */
+/*   Updated: 2024/12/30 11:01:03 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-static size_t	count_words (const char *s, char c)
+static size_t	ft_countwords(const char *s, char c)
 {
 	size_t	count;
 
 	count = 0;
-	if (!*s)
+	if (!s || !*s)
 		return (0);
 	while (*s)
 	{
@@ -33,13 +34,6 @@ static size_t	count_words (const char *s, char c)
 	return (count);
 }
 
-char	skip_char(char *s, char c)
-{
-	while (*s == c && *s != '\0')
-		s++;
-	return (s);
-}
-
 void	my_free(char **str, size_t i)
 {
 	while (i > 0)
@@ -47,13 +41,6 @@ void	my_free(char **str, size_t i)
 		free (str[--i]);
 	}
 	free (str);
-}
-
-char	ft_cpy(char **str, size_t k, size_t j)
-{
-	char	**str2; 
-
-	
 }
 
 char	**ft_split(char const *s, char c)
@@ -64,19 +51,19 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	word_count = count_words(s, c);
-	i = 0;
-	str = (char **)malloc((word_count + 1) * sizeof(char *));
-	if (!str)
+	word_count = ft_countwords(s, c);
+	if (!s || !(str =malloc((word_count + 1) * sizeof(char *))))
 		return (NULL);
+	i = 0;
 	while (word_count-- > 0)
 	{
-		s = skip_char((char *)s, c);
+		while (*s == c)
+			s++;
 		start = (char *)s;
 		while (*s != c && *s)
 			s++;
 		str[i] = (char *)malloc((s - start + 1) * sizeof (char));
-		if (!str[i])
+		if (!(str[i] = (char *)malloc((s - start + 1) * sizeof(char))))
 		{
 			my_free(str, i);
 			return (NULL);
