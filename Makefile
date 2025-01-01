@@ -8,7 +8,8 @@ ft_isalpha.c  ft_memcpy.c   ft_split.c       ft_strmapi.c   ft_toupper.c\
 ft_isascii.c  ft_memmove.c  ft_strchr.c      ft_strncmp.c   libft.h\
 ft_isdigit.c  ft_memset.c   ft_strdup.c      ft_strnstr.c\
 
-SRCS_BONUS = 
+SRCS_BONUS = ft_lstclear.c 	ft_lstdelone.c ft_lstiter.c ft_lstlast.c\     
+ft_lstmap.c       ft_lstnew.c       ft_lstsize.c\
 
 OBJS = $(SRC: .c=.o)
 
