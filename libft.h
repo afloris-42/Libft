@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:42:15 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/30 17:27:34 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/02 10:44:26 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,14 @@ char		**ft_split(char const *s, char c);
 char		*ft_strtrim(char const *s1, char const *set);
 size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
 size_t	ft_strlen(const char *s);
+void    ft_lstadd_back(t_list **lst, t_list *new);
+void    ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lsiter(t_list *lst, void (*f)(void *f));
+t_list	*ft_lstlast(t_list *lst);
+void	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void*));
+t_list  *ft_lstnew(void *content);
+int     ft_lstsize(t_list *lst);
 
 #endif 

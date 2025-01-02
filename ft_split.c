@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:54:25 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/01 16:54:48 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/02 11:51:11 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ void	my_free(char **str, size_t i)
 	free (str);
 }
 
+char	*skip_char(char *s, char c)
+{
+	while (*s == c && *s != '\0')
+		s++;
+	return (s);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	*start; 
@@ -58,8 +65,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (word_count-- > 0)
 	{
-		while (*s == c) 
-			s++;
+		s = skip_char((char *)s, c);
 		start = (char *)s;
 		while (*s != c && *s)
 			s++;

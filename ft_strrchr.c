@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 15:21:43 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/23 12:13:34 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/02 10:39:24 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-			l_occurrence = (char *)s;
+			l_occurence = (char *)s;
 		s++;
 	}
 	if (c == '\0')
