@@ -1,9 +1,16 @@
-#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <strings.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/02 15:51:29 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/02 15:55:22 by afloris          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 static size_t	ft_countwords(const char *s, char c)
 {
@@ -39,25 +46,26 @@ char	*skip_char(char *s, char c)
 		s++;
 	return (s);
 }
+
 char	*extract_substring(char *s, char c)
 {
-	char	*start; 
+	char	*start;
 	char	*end;
 	char	*substring;
-	size_t 		len; 
+	size_t	len;
 
 	start = skip_char (s, c);
-	end = ft_strchr(start, c); //ft
-	if(!end)
+	end = ft_strchr(start, c);
+	if (!end)
 	{
-		end = start + ft_strlen(start); //ft
+		end = start + ft_strlen(start);
 	}
-	len = end - start; 
+	len = end - start;
 	substring = (char *)malloc(len + 1);
 	if (!substring)
 		return (NULL);
 	ft_memcpy(substring, start, len);
-	substring[len] = '\0'; 
+	substring[len] = '\0';
 	return (substring);
 }
 
@@ -67,12 +75,12 @@ char	**ft_split(char const *s, char c)
 	size_t	word_count;
 	size_t	i;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	i = 0;
 	word_count = ft_countwords(s, c);
 	res = (char **)malloc((word_count +1) * sizeof(char *));
-	if(!res)
+	if (!res)
 		return (NULL);
 	while (*s && i < word_count)
 	{
@@ -83,7 +91,7 @@ char	**ft_split(char const *s, char c)
 			my_free(res, i);
 			return (NULL);
 		}
-		s += ft_strlen(res[i]); //ft
+		s += ft_strlen(res[i]);
 		i++;
 	}
 	return (res);

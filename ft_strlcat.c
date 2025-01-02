@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:33:00 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/01 17:09:31 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/02 16:24:54 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 		dst [i + l] = '\0';
 	return (i + srcsize);
 }
-

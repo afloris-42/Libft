@@ -1,12 +1,16 @@
-#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/02 16:15:25 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/02 16:16:08 by afloris          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_list
-{
-    void    	*content;
-    struct node	*next;
-}				t_list;
+#include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

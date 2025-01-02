@@ -1,18 +1,27 @@
-#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/02 15:55:55 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/02 15:57:49 by afloris          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t	ft_strlcpy (char *dst, const char *src, size_t size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
- 
+
 	i = 0;
-	if (!size) //size == 0
+	if (!size)
 	{
 		while (src[i])
 			i++;
-		return(i);
+		return (i);
 	}
 	while (i < size - 1 && src [i] != '\0')
 	{
@@ -23,5 +32,5 @@ size_t	ft_strlcpy (char *dst, const char *src, size_t size)
 		dst[i] = '\0';
 	while (src[i] != '\0')
 		i++;
-	return(i);
+	return (i);
 }
