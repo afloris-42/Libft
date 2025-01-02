@@ -1,19 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 13:54:25 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/02 11:51:11 by babyf            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <strings.h>
 
 
 static size_t	ft_countwords(const char *s, char c)
@@ -50,62 +39,52 @@ char	*skip_char(char *s, char c)
 		s++;
 	return (s);
 }
+char	*extract_substring(char *s, char c)
+{
+	char	*start; 
+	char	*end;
+	char	*substring;
+	size_t 		len; 
+
+	start = skip_char (s, c);
+	end = ft_strchr(start, c); //ft
+	if(!end)
+	{
+		end = start + ft_strlen(start); //ft
+	}
+	len = end - start; 
+	substring = (char *)malloc(len + 1);
+	if (!substring)
+		return (NULL);
+	ft_memcpy(substring, start, len);
+	substring[len] = '\0'; 
+	return (substring);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	char	*start; 
-	char	**str;
-	size_t	word_count; 
-	int		i;
-	int		j;
+	char	**res;
+	size_t	word_count;
+	size_t	i;
 
-	word_count = ft_countwords(s, c);
-	if (!s || !(str = malloc((word_count + 1) * sizeof(char *))))
+	if(!s)
 		return (NULL);
 	i = 0;
-	while (word_count-- > 0)
+	word_count = ft_countwords(s, c);
+	res = (char **)malloc((word_count +1) * sizeof(char *));
+	if(!res)
+		return (NULL);
+	while (*s && i < word_count)
 	{
 		s = skip_char((char *)s, c);
-		start = (char *)s;
-		while (*s != c && *s)
-			s++;
-		if (!(str[i] = (char *)malloc((s - start + 1) * sizeof(char))))
+		res[i] = extract_substring((char *)s, c);
+		if (!res[i])
 		{
-			my_free(str, i);
+			my_free(res, i);
 			return (NULL);
 		}
-		j = 0;
-		while (start < s)
-			str[i][j++] = *start++;
-		str[i++][j] = '\0';
+		s += ft_strlen(res[i]); //ft
+		i++;
 	}
-	str[i] = NULL;
-	return (str);
-}
-int main() 
-{
-    char str[] = "Hello World! This is a test.";
-    char delimiter = ' ';
-
-    char **result = ft_split(str, delimiter);
-    if (result) 
-    {
-        int i = 0;
-        while (result[i]) 
-        {
-            printf("Substring[%d]: %s\n", i, result[i]);
-            i++;
-        }
-        i = 0;
-        while (result[i]) 
-        {
-            free(result[i]);
-            i++;
-        }
-        free(result);
-    } else 
-    {
-        printf("Error: Could not split the string.\n");
-    }
-    return (0);
+	return (res);
 }
