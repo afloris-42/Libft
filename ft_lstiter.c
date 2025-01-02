@@ -1,12 +1,16 @@
-#include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/02 16:17:00 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/02 16:17:41 by afloris          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct s_list
-{
-	t_list *content;
-	struct node *next;
-}				t_list;
+#include "libft.h"
 
 void	ft_lsiter(t_list *lst, void (*f)(void *f))
 {

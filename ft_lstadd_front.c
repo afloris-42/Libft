@@ -1,19 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/02 16:09:17 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/02 16:10:19 by afloris          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <unistd.h>
-#include <stdlib.h>
 
-typedef struct s_list
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    void *content;
-    struct s_list *next;
-}              t_list;
-
-void ft_lstadd_front(t_list **lst, t_list *new)
-{
-    if (new == NULL)
-    {
-        return;
-    }
-    new -> next = *lst; 
-    *lst = new;
+	if (new == NULL)
+	{
+		return ;
+	}
+	new -> next = *lst;
+	*lst = new;
 }

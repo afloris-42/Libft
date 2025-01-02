@@ -6,7 +6,7 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:52:08 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/01 16:18:43 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/02 16:01:52 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ int	count_digit(int n)
 
 	if (n == 0)
 		return (1);
-	
-	count = 0; 
+	count = 0;
 	if (n < 0)
 	{
 		n = -n;
@@ -44,8 +43,8 @@ void	is_neg(int n, char *s)
 
 char	*ft_itoa(int n)
 {
-	int	nb_digit;
 	char	*s;
+	int		nb_digit;
 
 	if (n == -2147483648)
 		return ("-2147483648");
@@ -58,13 +57,12 @@ char	*ft_itoa(int n)
 		s[0] = '-';
 		n = -n;
 	}
-	
 	s[nb_digit] = '\0';
 	is_neg(nb_digit, s);
 	while (n > 0)
-		{
-			s[--nb_digit] = (n % 10) + '0';
-			n /= 10;
-		}
-		return (s);
+	{
+		s[--nb_digit] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (s);
 }
