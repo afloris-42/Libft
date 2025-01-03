@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:38:38 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/03 17:40:01 by babyf            ###   ########.fr       */
+/*   Created: 2025/01/02 16:17:00 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/03 18:22:21 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lsiter_bonus(t_list *lst, void (*f)(void *f))
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
-		return (c);
-	else
-		return (0);
+	while (lst != NULL)
+	{
+		f(lst -> content);
+		lst = lst -> next;
+	}
 }

@@ -6,18 +6,18 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 17:05:42 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/22 12:06:48 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/03 17:54:16 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{
-		c += 32;
-		return (c);
+		return (c + 32);
 	}
 	return (0);
 }
