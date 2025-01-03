@@ -6,7 +6,7 @@
 /*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:12:40 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/23 13:18:00 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/03 17:07:29 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	ft_putnbr_fd(int n, int fd)
 		n = -n;
 	}
 	if (n > 9)
-		ft_putnbt_fd(n / 10, fd);
+		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd(n % 10 + '0', fd);
 }

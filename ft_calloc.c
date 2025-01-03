@@ -29,7 +29,7 @@ void	*ft_calloc(size_t count, size_t size)
 	i = 0;
 	while (i < tot_size)
 	{
-		byte_ptr [i] = 0;
+		byte_ptr[i] = 0;
 		i++;
 	}
 	return (ptr);

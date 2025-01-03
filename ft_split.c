@@ -35,9 +35,9 @@ void	my_free(char **str, size_t i)
 {
 	while (i > 0)
 	{
-		free (str[--i]);
+		free(str[--i]);
 	}
-	free (str);
+	free(str);
 }
 
 char	*skip_char(char *s, char c)
@@ -54,7 +54,7 @@ char	*extract_substring(char *s, char c)
 	char	*substring;
 	size_t	len;
 
-	start = skip_char (s, c);
+	start = skip_char(s, c);
 	end = ft_strchr(start, c);
 	if (!end)
 	{
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	word_count = ft_countwords(s, c);
-	res = (char **)malloc((word_count +1) * sizeof(char *));
+	res = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	while (*s && i < word_count)

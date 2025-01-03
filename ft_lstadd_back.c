@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 16:05:32 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/02 16:08:42 by afloris          ###   ########.fr       */
+/*   Created: 2025/01/03 16:55:11 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/03 16:55:17 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		*last = *lst;
-		while (last -> next != NULL)
+		while (last->next != NULL)
 		{
-			last = last -> next;
+			last = last->next;
 		}
-		last -> next = new;
+		last->next = new;
 		*lst = new;
 	}
-	new -> next = NULL;
+	new->next = NULL;
 }

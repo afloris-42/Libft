@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return ("-2147483648");
-	nb_digit = count_digit (n);
+	nb_digit = count_digit(n);
 	s = (char *)malloc((nb_digit + 1) * sizeof(char));
 	if (!s)
 		return (NULL);
