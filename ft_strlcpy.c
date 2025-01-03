@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afloris <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 15:55:55 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/02 15:57:49 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/03 17:49:19 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/19 16:38:38 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/03 17:40:01 by babyf            ###   ########.fr       */
+/*   Created: 2025/01/02 16:20:20 by afloris           #+#    #+#             */
+/*   Updated: 2025/01/03 18:22:50 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstnew_bonus(void *content)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
-		return (c);
-	else
-		return (0);
+	t_list	new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node -> content = content;
+	new_node -> next = NULL;
+	return (new_node);
 }

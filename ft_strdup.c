@@ -6,13 +6,14 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:14:57 by afloris           #+#    #+#             */
-/*   Updated: 2024/12/25 11:52:51 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/03 17:47:00 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*dup;
 	int		i;

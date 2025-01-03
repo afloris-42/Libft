@@ -27,7 +27,7 @@ AR = ar rcs
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
-all: ${NAME}
+all: $(NAME)
 
 clean:
 	${RM} ${OBJS} ${OBJS_B}

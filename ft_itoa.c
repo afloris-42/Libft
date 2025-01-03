@@ -6,18 +6,20 @@
 /*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 13:52:08 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/02 16:01:52 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/03 18:38:33 by babyf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int	count_digit(int n)
 {
 	int	count;
 
 	if (n == 0)
-		return (1);
+		return (0);
 	count = 0;
 	if (n < 0)
 	{
@@ -66,3 +68,4 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
+
