@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 15:21:43 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/04 12:31:43 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/04 17:24:47 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char		*l_occurence;
+	const char	*l_occurence;
 
 	l_occurence = NULL;
-	while (*s != '\0')
+	while (*s)
 	{
-		if (*s == c)
-			l_occurence = (char *)s;
+		if (*s == (char)c)
+			l_occurence = s;
 		s++;
 	}
 	if (c == '\0')
 		return ((char *)s);
-	return (l_occurence);
+	return ((char *)l_occurence);
 }
