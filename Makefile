@@ -24,7 +24,7 @@ AR = ar rcs
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 	
-${NAME}: ${OBJS}
+$(NAME): ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
 all: $(NAME)
