@@ -6,11 +6,11 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 15:55:55 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/04 11:42:14 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/04 12:34:50 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"s
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: babyf <babyf@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 15:21:43 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/02 10:39:24 by babyf            ###   ########.fr       */
+/*   Updated: 2025/01/04 12:31:43 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*s2;
 	char		*l_occurence;
 
-	s2 = s;
 	l_occurence = NULL;
 	while (*s != '\0')
 	{
