@@ -6,16 +6,15 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:22:03 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/04 11:31:54 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/04 12:01:55 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 255)
+	if (c >= 0 && c <= 127)
 		return (c);
 	else
 		return (0);
