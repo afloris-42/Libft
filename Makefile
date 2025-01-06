@@ -14,15 +14,15 @@ ft_lstnew_bonus.c ft_lstclear_bonus.c      ft_lstlast_bonus.c       ft_lstsize_b
 
 OBJS = ${SRCS:.c=.o}
 
-BONUS_OBJS = ${SRCS_BONUS:.c=.o}
+OBJS_B = ${SRCS_BONUS:.c=.o}
 
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar rcs
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o $@
 	
 $(NAME): ${OBJS}
 	${AR} ${NAME} ${OBJS}
@@ -33,9 +33,11 @@ clean:
 	${RM} ${OBJS} ${OBJS_B}
 
 fclean: clean
-		${RM} ${NAME}
+	${RM} ${NAME}
+
 re: fclean all
 
 bonus: ${NAME} ${OBJS_B}
-		ar rcs ${NAME} ${OBJS_B}
+	${AR} ${NAME} ${OBJS} ${OBJS_B}
+
 .PHONY: all bonus clean fclean re
