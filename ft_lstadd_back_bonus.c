@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 16:05:32 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/06 16:33:10 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/07 17:28:03 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,18 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (new == NULL)
-	{
+	if (!lst || !new)
 		return ;
-	}
 	if (*lst == NULL)
 	{
 		*lst = new;
+		return ;
 	}
 	else
 	{
-		*last = *lst;
-		while (last -> next != NULL)
-		{
+		last = *lst;
+		while (last -> next)
 			last = last -> next;
-		}
 		last -> next = new;
-		*lst = new;
 	}
-	new -> next = NULL;
 }

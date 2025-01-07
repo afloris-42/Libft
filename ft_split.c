@@ -6,7 +6,7 @@
 /*   By: afloris <afloris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 15:51:29 by afloris           #+#    #+#             */
-/*   Updated: 2025/01/04 17:16:24 by afloris          ###   ########.fr       */
+/*   Updated: 2025/01/07 16:34:54 by afloris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ char	**ft_split(char const *s, char c)
 		s += ft_strlen(res[i]);
 		i++;
 	}
+	res[i] = NULL;
 	return (res);
 }
